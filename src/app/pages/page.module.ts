@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 import { ProductComponent } from './product/product.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
-import { SharedModule } from '../shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -25,8 +26,8 @@ import { AuthModule } from '../auth/auth.module';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule,
-    AuthModule
+    AuthModule,
+    RouterModule
   ]
 })
 export class PageModule { }

@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageModule } from './pages/page.module';
+//import { PageModule } from './pages/page.module';
+//import { PagesComponent } from './pages/pages.component';
+
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NopagesfoundComponent } from './pages/nopagesfound/nopagesfound.component';
+import { PagesComponent } from './pages/pages.component';
 
 const routes:Routes = [
   {
-  path: '', component:PageModule,
+  path: '', component:PagesComponent,
   children:[
     {path:'dashboard', component:DashboardComponent},
     {path:'product', component:ProductComponent},
