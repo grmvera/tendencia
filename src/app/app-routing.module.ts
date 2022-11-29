@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//import { PageModule } from './pages/page.module';
-//import { PagesComponent } from './pages/pages.component';
-
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
