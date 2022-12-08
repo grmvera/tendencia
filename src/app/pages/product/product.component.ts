@@ -9,74 +9,78 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
   ) { }
 
+
   ngOnInit(): void {
-
+    this.createProduct();
+    // this.getProducts();
+    //this.getProductsId();
+    //this.updateProduct();
+    this.deleteProduct();
   }
-  getProductsId() {
-    let id = 1;
-    const url = 'https://api.escuelajs.co/api/v1/products'
-    const response = this.httpClient.get(url + '/' + id).subscribe(
-      Response => {
 
-        console.log(response);
-      }
-    )
+  private url: string = "https://api.escuelajs.co/api/v1/products";
+
+  data = {
+
+    title: 'Geovanny Vera',
+    price: 5,
+    description: 'Quinto - A',
+    images: [],
+    categoryId: 1,
+  }
+
+  getProducts() {
+
+    this.httpClient.get(this.url).subscribe(response => {
+
+      console.log(response);
+
+    })
   };
 
-  createProducts(){
-    let data = {
-      title: String,
-      price: Number.toString,
-      descripcion: String,
-      images: ['imagenes'].toString,
-      category: 1,
-      }
-    const url = 'https://api.escuelajs.co/api/v1/products'
-    const response = this.httpClient.post(url, data).subscribe(
-      Response => {
+  getProductsId() {
 
-        console.log(response);
-      }
-    )
-  }
+    this.httpClient.get(this.url).subscribe(response => {
 
-  updateProducto(){
-    let data = {
-      title: 'quinto a',
-      price: Number.toString,
-      descripcion: 'geovanny vera',
-      images: ['imagenes'].toString,
-      category: 1,
-      }
-    const url = 'https://api.escuelajs.co/api/v1/products'
-    const response = this.httpClient.put(url, data).subscribe(
-      Response => {
+      console.log(response);
 
-        console.log(response);
-      }
-    )
-  }
-  
-  deleteProducto(){
-    let data = {
-      title: 'quinto a',
-      price: Number.toString,
-      descripcion: 'geovanny vera',
-      images: ['imagenes'].toString,
-      category: 1,
-      }
-    const url = 'https://api.escuelajs.co/api/v1/products'
-    const response = this.httpClient.delete(url+ '/' + data).subscribe(
-      Response => {
+    })
+  };
 
-        console.log(response);
+  createProduct() {
+
+    this.httpClient.post(this.url, this.data).subscribe(
+      response => {
+
+        console.log('response');
+
       }
-    )
+    );
   }
 
 
+  updateProduct() {
 
+    this.httpClient.put(this.url, this.data).subscribe(
+      response => {
+
+        console.log('response');
+
+      }
+    );
+  }
+
+  deleteProduct() {
+    
+    this.httpClient.delete(this.url).subscribe(
+      response => {
+
+        console.log(response);
+
+      }
+    );
+  }
 }

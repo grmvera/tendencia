@@ -12,12 +12,14 @@ import { PagesComponent } from './pages/pages.component';
 const routes:Routes = [
   {
   path: '', component:PagesComponent,
+
   children:[
-    {path:'dashboard', component:DashboardComponent},
-    {path:'product', component:ProductComponent},
-    {path:'catalogue', component:CatalogueComponent},
     {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+    {path:'dashboard', component:DashboardComponent},
   ]},
+
+    //{path:'catalogue', component:CatalogueComponent},
+  {path:'product', component:ProductComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path: '**', component:NopagesfoundComponent}
