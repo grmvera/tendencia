@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ProductHttpService } from 'src/app/services/product-http.service';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +11,7 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private httpClient: HttpClient,
+    private productHttpsService : ProductHttpService
   ) { }
 
 
@@ -34,7 +36,7 @@ export class ProductComponent implements OnInit {
 
   getProducts() {
 
-    this.httpClient.get(this.url).subscribe(response => {
+    this.productHttpsService.getProducts().subscribe(response => {
 
       console.log(response);
 
@@ -43,7 +45,7 @@ export class ProductComponent implements OnInit {
 
   getProductsId() {
 
-    this.httpClient.get(this.url).subscribe(response => {
+    this.productHttpsService.getProductsId(1).subscribe(response => {
 
       console.log(response);
 
@@ -52,7 +54,7 @@ export class ProductComponent implements OnInit {
 
   createProduct() {
 
-    this.httpClient.post(this.url, this.data).subscribe(
+    this.productHttpsService.createProduct(1).subscribe(
       response => {
 
         console.log('response');
@@ -64,7 +66,18 @@ export class ProductComponent implements OnInit {
 
   updateProduct() {
 
-    this.httpClient.put(this.url, this.data).subscribe(
+    this.productHttpsService.updateProduct().subscribe(
+      response => {
+
+        console.log('response');
+
+      }
+    );
+  }
+
+  updateOne() {
+
+    this.productHttpsService.updateOne(2).subscribe(
       response => {
 
         console.log('response');
@@ -75,7 +88,7 @@ export class ProductComponent implements OnInit {
 
   deleteProduct() {
     
-    this.httpClient.delete(this.url).subscribe(
+    this.productHttpsService.deleteProduct(8).subscribe(
       response => {
 
         console.log(response);
