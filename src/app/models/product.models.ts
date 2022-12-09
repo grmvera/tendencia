@@ -9,3 +9,16 @@ export interface ProductModel{
     category: CategoryModel;
 
 }
+
+
+export interface createProduct extends Omit<ProductModel, 'id' | 'category'>{
+
+    categoriId:number;
+
+}
+
+export interface UpdateProduct extends Omit<ProductModel, 'id' | 'category'>{
+
+    categoriId:number;
+    
+}
