@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
+import { CategoryComponent } from './category/category.component';
 
 
 
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     DashboardComponent,
     ProductComponent,
     CatalogueComponent,
-    PagesComponent
+    PagesComponent,
+    CategoryComponent
   ],
   exports:[
     DashboardComponent,
