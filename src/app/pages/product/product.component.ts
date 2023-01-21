@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductHttpService } from 'src/app/services/product-http.service';
-import { ProductModel, UpdateProductDto } from '../entities/product.model';
+import { ProductModel, UpdateProductDto } from '../../entities/product.model';
 
 @Component({
   selector: 'app-product',

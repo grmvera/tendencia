@@ -8,10 +8,12 @@ import { PageModule } from './pages/page.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { NoFoundComponent } from './no-found/no-found/no-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NoFoundComponent,
   ],
   imports: [
     BrowserModule,
