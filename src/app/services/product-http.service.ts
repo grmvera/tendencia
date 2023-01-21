@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { ProductModel } from '../models/product.models';
+import { CreateProductDto, ProductModel, UpdateProductDto } from '../pages/entities/product.model';
 
 
 @Injectable({
@@ -20,14 +20,14 @@ export class ProductHttpService {
     const url = `${this.API_URL}/${id}`;
     return this.httpClient.get<ProductModel>(url);
   }
-  /*store(product: CreateProductDto):Observable<ProductModel> {
+  store(product: CreateProductDto):Observable<ProductModel> {
     const url = `${this.API_URL}`;
     return this.httpClient.post<ProductModel>(url, product);
   }
   update(id:ProductModel['id'], product: UpdateProductDto):Observable<ProductModel> {
     const url = `${this.API_URL}/${id}`;
     return this.httpClient.put<ProductModel>(url, product);
-  }*/
+  }
   destroy(id:ProductModel['id']):Observable<any> {
     const url = `${this.API_URL}/${id}`;
     return this.httpClient.delete<any>(url).

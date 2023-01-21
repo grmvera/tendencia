@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductModel } from 'src/app/models/product.models';
+
 import { ProductHttpService } from 'src/app/services/product-http.service';
+import { ProductModel, UpdateProductDto } from '../entities/product.model';
 
 @Component({
   selector: 'app-product',
