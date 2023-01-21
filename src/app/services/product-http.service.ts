@@ -1,13 +1,14 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { CreateProductDto, ProductModel, UpdateProductDto } from '../entities/product.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProductHttpService {
+
   readonly API_URL = 'https://api.escuelajs.co/api/v1/products';
 
   constructor(private httpClient: HttpClient) {
@@ -33,5 +34,6 @@ export class ProductHttpService {
     return this.httpClient.delete<any>(url).
     pipe(map((response:{rta:boolean})=>{return response.rta;})
     );
-  }
+
+}
 }
